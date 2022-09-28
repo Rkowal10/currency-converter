@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walutowy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script defer src="javascript/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form js-form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kalkulator walutowy</legend>
+                <label class="form__label">Ile złotych chcesz wymienić: <input class="form__input js-pln" type="number" step="any"
+                        min="0" required placeholder="PLN"></label>
+                <ul class="form__list">
+                    <li class="form__item"><label class="form__label"><input class="form__input js-usd" type="radio"
+                                name="currency" value="4.91" checked>USD = 4,91
+                            zł</label></li>
+                    <li class="form__item"><label class="form__label"><input class="form__input js-euro" type="radio"
+                                name="currency" value="4.75">EUR = 4,75 zł</label></li>
+                    <li class="form__item"><label class="form__label"><input class="form__input js-gbp" type="radio"
+                                name="currency" value="5.28">GBP = 5,28 zł</label></li>
+                    <li class="form__item"><label class="form__label"><input class="form__input js-chf" type="radio"
+                                name="currency" value="4.98">CHF = 4,98 zł</label></li>
+                </ul>
+                <button class="form__button">Oblicz</button>
+                <button type="reset" class="form__button">Reset</button>
+            </fieldset>
+        </form>
+        <p>Otrzymasz: <strong class="js-result">N/A</strong><span class="js-name"></span></p>
+    </div>
+</body>
+
+</html>

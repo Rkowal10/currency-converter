@@ -1,0 +1,16 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 10%, 61%);
+    text-align: center;
+    color: #160d0d;
+    font-size: large;
+    padding: 10px;
+}
