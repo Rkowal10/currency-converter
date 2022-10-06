@@ -18,3 +18,12 @@ body {
     background-repeat: no-repeat repeat;
     background-size: 100%;
 }
+
+.paragraph {
+    font-weight: bold;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: hsl(0, 24%, 89%);
+    padding: 10px;
+}
