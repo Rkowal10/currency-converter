@@ -1,4 +1,5 @@
 # **Currency-converter**
+![calculator](https://github.com/Rkowal10/currency-converter/blob/main/images/CurrencyConverter.png?raw=true)
 
 ## DEMO
 https://rkowal10.github.io/currency-converter/
