@@ -52,3 +52,12 @@
 .form__button:hover {
     background-color: hsl(0, 0%, 76%);
 }
+
+.form__paragraph {
+    font-size: larger;
+}
+
+.form__paragraph--smaller {
+    font-size: small;
+    font-style: italic;
+}
