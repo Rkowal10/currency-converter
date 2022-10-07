@@ -1,38 +1,42 @@
-let plnElement = document.querySelector(".js-pln");
-let usdElement = document.querySelector(".js-usd");
-let euroElement = document.querySelector(".js-euro");
-let gbpElement = document.querySelector(".js-gbp");
-let chfElement = document.querySelector(".js-chf");
-let formElement = document.querySelector(".js-form");
-let resultElement = document.querySelector(".js-result");
-let nameElement = document.querySelector(".js-name");
+{
+    const plnElement = document.querySelector(".js-pln");
+    const formElement = document.querySelector(".js-form");
+    const resultElement = document.querySelector(".js-result");
+    const nameElement = document.querySelector(".js-name");
+    const currencyElement = document.querySelector(".js-currency");
 
+    const usd = 4.89;
+    const euro = 4.84;
+    const gbp = 5.53;
+    const chf = 4.98;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let pln = +plnElement.value;
-    let usd = +usdElement.value;
-    let euro = +euroElement.value;
-    let gbp = +gbpElement.value;
-    let chf = +chfElement.value;
-    let result;
-    let name;
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const pln = +plnElement.value;
+        let result;
+        let name;
+        const currency = currencyElement.value;
 
-    if (usdElement.checked === true) {
-        result = pln / usd;
-        name = "USD";
-    } else if (euroElement.checked === true) {
-        result = pln / euro;
-        name = "EUR";
-    } else if (gbpElement.checked === true) {
-        result = pln / gbp;
-        name = "GBP";
-    } else {
-        result = pln / chf;
-        name = "CHF";
-    }
+        switch (currency) {
+            case "USD":
+                result = pln / usd;
+                name = "USD";
+                break;
+            case "EUR":
+                result = pln / euro;
+                name = "EUR";
+                break;
+            case "GBP":
+                result = pln / gbp;
+                name = "GBP";
+                break;
+            case "CHF":
+                result = pln / chf;
+                name = "CHF";
+                break;
+        }
 
-
-    resultElement.innerText = result.toFixed(2);
-    nameElement.innerText =` ${name}`;
-});
+        resultElement.innerText = result.toFixed(2);
+        nameElement.innerText = ` ${name}`;
+    });
+}

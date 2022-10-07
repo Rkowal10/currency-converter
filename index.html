@@ -25,20 +25,22 @@
                 <legend class="form__legend">Kalkulator walutowy</legend>
                 <label class="form__label">Ile złotych chcesz wymienić: <input class="form__input js-pln" type="number"
                         step="any" min="0" required placeholder="PLN"></label>
-                <ul class="form__list">
-                    <li class="form__item"><label class="form__label"><input class="form__input js-usd" type="radio"
-                                name="currency" value="4.91" checked>USD = 4,91
-                            zł</label></li>
-                    <li class="form__item"><label class="form__label"><input class="form__input js-euro" type="radio"
-                                name="currency" value="4.75">EUR = 4,75 zł</label></li>
-                    <li class="form__item"><label class="form__label"><input class="form__input js-gbp" type="radio"
-                                name="currency" value="5.28">GBP = 5,28 zł</label></li>
-                    <li class="form__item"><label class="form__label"><input class="form__input js-chf" type="radio"
-                                name="currency" value="4.98">CHF = 4,98 zł</label></li>
-                </ul>
+                <p>
+                    <label class="form__label">Wybierz walutę:
+                        <select name="currency" class="form__input js-currency">
+                            <option value="USD" selected>Dolar amerykański (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">Funt szterling (GBP)</option>
+                            <option value="CHF">Frank szwajcarski (CHF)</option>
+                        </select>
+                    </label>
+                </p>
                 <button class="form__button">Oblicz</button>
                 <button type="reset" class="form__button">Reset</button>
                 <p>Otrzymasz: <strong class="js-result">N/A</strong><span class="js-name"></span></p>
+                <p>
+                    Kursy walut pochądzą ze strony nbp.pl z Tabeli nr 194/A/NBP/2022 z dnia 2022-10-06
+                </p>
             </fieldset>
         </form>
     </div>
