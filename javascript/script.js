@@ -2,41 +2,33 @@
     const plnElement = document.querySelector(".js-pln");
     const formElement = document.querySelector(".js-form");
     const resultElement = document.querySelector(".js-result");
-    const nameElement = document.querySelector(".js-name");
     const currencyElement = document.querySelector(".js-currency");
 
-    const usd = 4.89;
-    const euro = 4.84;
-    const gbp = 5.53;
-    const chf = 4.98;
-
-    formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const pln = +plnElement.value;
-        let result;
-        let name;
-        const currency = currencyElement.value;
+    const currencyExchange = (pln, currency) => {
+        const usd = 4.89;
+        const euro = 4.84;
+        const gbp = 5.53;
+        const chf = 4.98;
 
         switch (currency) {
             case "USD":
-                result = pln / usd;
-                name = "USD";
-                break;
+                return pln / usd;
             case "EUR":
-                result = pln / euro;
-                name = "EUR";
-                break;
+                return pln / euro;
             case "GBP":
-                result = pln / gbp;
-                name = "GBP";
-                break;
+                return pln / gbp;
             case "CHF":
-                result = pln / chf;
-                name = "CHF";
-                break;
+                return pln / chf;
         }
+    }
 
-        resultElement.innerText = result.toFixed(2);
-        nameElement.innerText = ` ${name}`;
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const pln = +plnElement.value;
+        const currency = currencyElement.value;
+        let result = currencyExchange(pln, currency);
+
+        resultElement.innerHTML =`${result.toFixed(2)} ${currency}`;
     });
 }
