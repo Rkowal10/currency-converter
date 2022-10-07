@@ -1,9 +1,4 @@
 {
-    const plnElement = document.querySelector(".js-pln");
-    const formElement = document.querySelector(".js-form");
-    const resultElement = document.querySelector(".js-result");
-    const currencyElement = document.querySelector(".js-currency");
-
     const currencyExchange = (pln, currency) => {
         const usd = 4.89;
         const euro = 4.84;
@@ -20,15 +15,27 @@
             case "CHF":
                 return pln / chf;
         }
-    }
+    };
 
-    formElement.addEventListener("submit", (event) => {
+    const onFormSubmit = (event) => {
         event.preventDefault();
+
+        const plnElement = document.querySelector(".js-pln");
+        const resultElement = document.querySelector(".js-result");
+        const currencyElement = document.querySelector(".js-currency");
 
         const pln = +plnElement.value;
         const currency = currencyElement.value;
-        let result = currencyExchange(pln, currency);
+        const result = currencyExchange(pln, currency);
 
-        resultElement.innerHTML =`${result.toFixed(2)} ${currency}`;
-    });
+        resultElement.innerHTML = `${result.toFixed(2)} ${currency}`;
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+    init();
 }
