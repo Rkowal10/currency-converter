@@ -4,7 +4,7 @@
 ## DEMO
 https://rkowal10.github.io/currency-converter/
 
-That simple currency converter is the second project I did during the course.
+That simple currency converter is the second project that I did during the course.
 
 ## User manual
 1. Enter the amount in PLN in the field "Ile złotych chcesz wymienić".
