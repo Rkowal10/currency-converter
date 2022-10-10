@@ -22,11 +22,23 @@
         <form class="form js-form">
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Kalkulator walutowy</legend>
-                <label class="form__label">Ile złotych chcesz wymienić: <input class="form__input js-pln" type="number"
-                        step="any" min="0" required placeholder="PLN"></label>
+                <label class="form__label">Jaką kwotę chcesz wymienić: <input class="form__input js-value" type="number"
+                        step="any" min="0" required placeholder="Wpisz kwotę"></label>
                 <p>
                     <label class="form__label">Wybierz walutę:
-                        <select name="currency" class="form__input js-currency">
+                        <select name="currency1" class="form__input js-currency1">
+                            <option value="PLN" selected>Polski złoty (PLN)</option>
+                            <option value="USD">Dolar amerykański (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">Funt szterling (GBP)</option>
+                            <option value="CHF">Frank szwajcarski (CHF)</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label class="form__label">Wybierz walutę:
+                        <select name="currency2" class="form__input js-currency2">
+                            <option value="PLN">Polski złoty (PLN)</option>
                             <option value="USD" selected>Dolar amerykański (USD)</option>
                             <option value="EUR">Euro (EUR)</option>
                             <option value="GBP">Funt szterling (GBP)</option>
@@ -36,7 +48,8 @@
                 </p>
                 <button class="form__button">Oblicz</button>
                 <button type="reset" class="form__button">Reset</button>
-                <p class="form__paragraph">Otrzymasz: <strong class="js-result">N/A</strong><span class="js-name"></span></p>
+                <p class="form__paragraph">Otrzymasz: <strong class="js-result">N/A</strong><span
+                        class="js-name"></span></p>
                 <p class="form__paragraph form__paragraph--smaller">
                     Kursy walut pochądzą ze strony nbp.pl z Tabeli nr 194/A/NBP/2022 z dnia 2022-10-06
                 </p>
