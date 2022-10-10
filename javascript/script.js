@@ -1,34 +1,93 @@
 {
-    const currencyExchange = (pln, currency) => {
+    const currencyExchange = (value, currency1, currency2) => {
         const usd = 4.89;
         const euro = 4.84;
         const gbp = 5.53;
         const chf = 4.98;
 
-        switch (currency) {
+        switch (currency1) {
             case "USD":
-                return pln / usd;
+                switch (currency2) {
+                    case "USD":
+                        return value;
+                    case "PLN":
+                        return value * 5.53;
+                    case "EUR":
+                        return value * 1.03;
+                    case "GBP":
+                        return value * 0.9;
+                    case "CHF":
+                        return value * 0.9984;
+                }
+            case "PLN":
+                switch (currency2) {
+                    case "PLN":
+                        return value;
+                    case "USD":
+                        return value / usd;
+                    case "EUR":
+                        return value / euro;
+                    case "GBP":
+                        return value / gbp;
+                    case "CHF":
+                        return value / chf;
+                }
             case "EUR":
-                return pln / euro;
+                switch (currency2) {
+                    case "EUR":
+                        return value;
+                    case "USD":
+                        return value * 0.9694;
+                    case "PLN":
+                        return value * euro;
+                    case "GBP":
+                        return value * 0.8766;
+                    case "CHF":
+                        return value * 0.9678;
+                }
             case "GBP":
-                return pln / gbp;
+                switch (currency2) {
+                    case "GBP":
+                        return value;
+                    case "USD":
+                        return value * 1.1052;
+                    case "PLN":
+                        return value * gbp;
+                    case "EUR":
+                        return value * 1.1406;
+                    case "CHF":
+                        return value * 1.1040;
+                }
             case "CHF":
-                return pln / chf;
+                switch (currency2) {
+                    case "CHF":
+                        return value;
+                    case "USD":
+                        return value * 1.0011;
+                    case "PLN":
+                        return value * chf;
+                    case "EUR":
+                        return value * 1.0327;
+                    case "GBP":
+                        return value * 0.9059;
+                }
         }
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const plnElement = document.querySelector(".js-pln");
+        const valueElement = document.querySelector(".js-value");
         const resultElement = document.querySelector(".js-result");
-        const currencyElement = document.querySelector(".js-currency");
+        const currencyElement1 = document.querySelector(".js-currency1");
+        const currencyElement2 = document.querySelector(".js-currency2");
 
-        const pln = +plnElement.value;
-        const currency = currencyElement.value;
-        const result = currencyExchange(pln, currency);
+        const value = +valueElement.value;
+        const currency1 = currencyElement1.value;
+        const currency2 = currencyElement2.value;
+        const result = currencyExchange(value, currency1, currency2);
 
-        resultElement.innerHTML = `${result.toFixed(2)} ${currency}`;
+        resultElement.innerHTML = `${result.toFixed(2)} ${currency2}`;
     };
 
     const init = () => {
