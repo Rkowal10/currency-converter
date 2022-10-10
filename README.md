@@ -9,6 +9,7 @@ That simple currency converter is the second project that I did during the cours
 ![animation](images/Animation.gif)
 
 ## User manual
-1. Enter the amount in PLN in the field "Ile złotych chcesz wymienić".
-2. Select the currency you want to exchange
+1. Enter the value in the field "kwotę chcesz wymienić chcesz wymienić".
+2. Select the initial currency.
+2. Select the final currency.
 3. Press "Oblicz" when you want to calculate the value or "Reset" when you want to delete changes.
