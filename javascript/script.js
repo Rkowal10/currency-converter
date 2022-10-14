@@ -48,6 +48,21 @@
                 return value * 0.9678;
         }
     }
+
+    const exchangeGBP = (value, currency2) => {
+        switch (currency2) {
+            case "GBP":
+                return value;
+            case "USD":
+                return value * 1.1052;
+            case "PLN":
+                return value * 5.53;
+            case "EUR":
+                return value * 1.1406;
+            case "CHF":
+                return value * 1.1040;
+        }
+    }
     
     const currencyExchange = (value, currency1, currency2) => {
         
@@ -59,18 +74,7 @@
             case "EUR":
                 return exchangeEUR(value, currency2);
             case "GBP":
-                switch (currency2) {
-                    case "GBP":
-                        return value;
-                    case "USD":
-                        return value * 1.1052;
-                    case "PLN":
-                        return value * 5.53;
-                    case "EUR":
-                        return value * 1.1406;
-                    case "CHF":
-                        return value * 1.1040;
-                }
+                return exchangeGBP(value, currency2);
             case "CHF":
                 switch (currency2) {
                     case "CHF":
