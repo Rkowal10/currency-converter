@@ -1,4 +1,19 @@
 {
+    const exchangeUSD = (value, currency2) => {
+        switch (currency2) {
+            case "USD":
+                return value;
+            case "PLN":
+                return value * 5.53;
+            case "EUR":
+                return value * 1.03;
+            case "GBP":
+                return value * 0.9;
+            case "CHF":
+                return value * 0.9984;
+        }
+    }
+    
     const currencyExchange = (value, currency1, currency2) => {
         const usd = 4.89;
         const euro = 4.84;
@@ -7,18 +22,7 @@
 
         switch (currency1) {
             case "USD":
-                switch (currency2) {
-                    case "USD":
-                        return value;
-                    case "PLN":
-                        return value * 5.53;
-                    case "EUR":
-                        return value * 1.03;
-                    case "GBP":
-                        return value * 0.9;
-                    case "CHF":
-                        return value * 0.9984;
-                }
+               return exchangeUSD(value, currency2);
             case "PLN":
                 switch (currency2) {
                     case "PLN":
