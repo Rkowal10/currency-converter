@@ -13,29 +13,34 @@
                 return value * 0.9984;
         }
     }
-    
-    const currencyExchange = (value, currency1, currency2) => {
+
+    const exchangePLN = (value, currency2) => {
         const usd = 4.89;
         const euro = 4.84;
         const gbp = 5.53;
         const chf = 4.98;
 
+        switch (currency2) {
+            case "PLN":
+                return value;
+            case "USD":
+                return value / usd;
+            case "EUR":
+                return value / euro;
+            case "GBP":
+                return value / gbp;
+            case "CHF":
+                return value / chf;
+        }
+    }
+    
+    const currencyExchange = (value, currency1, currency2) => {
+        
         switch (currency1) {
             case "USD":
                return exchangeUSD(value, currency2);
             case "PLN":
-                switch (currency2) {
-                    case "PLN":
-                        return value;
-                    case "USD":
-                        return value / usd;
-                    case "EUR":
-                        return value / euro;
-                    case "GBP":
-                        return value / gbp;
-                    case "CHF":
-                        return value / chf;
-                }
+                return exchangePLN(value, currency2);
             case "EUR":
                 switch (currency2) {
                     case "EUR":
@@ -43,7 +48,7 @@
                     case "USD":
                         return value * 0.9694;
                     case "PLN":
-                        return value * euro;
+                        return value * 4.84;
                     case "GBP":
                         return value * 0.8766;
                     case "CHF":
@@ -56,7 +61,7 @@
                     case "USD":
                         return value * 1.1052;
                     case "PLN":
-                        return value * gbp;
+                        return value * 5.53;
                     case "EUR":
                         return value * 1.1406;
                     case "CHF":
@@ -69,7 +74,7 @@
                     case "USD":
                         return value * 1.0011;
                     case "PLN":
-                        return value * chf;
+                        return value * 4.98;
                     case "EUR":
                         return value * 1.0327;
                     case "GBP":
