@@ -2,7 +2,7 @@
 ![calculator](https://github.com/Rkowal10/currency-converter/blob/main/images/CurrencyConverter.png?raw=true)
 
 ## DEMO
-https://rkowal10.github.io/currency-converter/
+**[My currency-converter](https://rkowal10.github.io/currency-converter/)**
 
 That simple currency converter is the second project that I did during the course.
 
